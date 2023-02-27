@@ -1,0 +1,30 @@
+
+<h1>TODO List</h1>
+
+<p>A place to store your todos</p>
+<h3>Filter your to-dos</h3>
+<input type= Boolean  />
+<button (click)="FilterList()">Filter List</button>
+
+
+
+
+<div class="container">   
+    
+    <div class="row" *ngFor="let t of TodoList; index as i" >
+            <p>{{i+1}}. <button  *ngIf="t.completed==true" style="color:#ff69b4;height:auto;"(click)="t.completed = false"><p>Complete</p></button> 
+             {{ t.task}} 
+            <button (click)="removeFromList(i)">X</button></p>           
+        
+    </div>
+   
+</div>
+<div>
+    <p>Add your to-do</p>   
+    <input type="text" [(ngModel)] ="newTodo.task"/>
+    <!--  -->
+    
+
+    <button (click)="addTolist()">Add</button>
+</div>
+
